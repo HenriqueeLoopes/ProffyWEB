@@ -16,7 +16,7 @@
 
 Next Level Week é uma semana intensa com um propósito de desenvolver uma aplicação do mundo real fornecida pela RocketSeat, nessa edição foi desenvolvido o Proffy.
 
-<p><a href='https://next-level-week-2.vercel.app'>Visitar projeto</a></p>
+<p><a href='https://proffy.henriquelopes.tk'>Visitar projeto</a></p>
 
 <div align='center'>
 <img src="./.github-assets/logo.svg" width='250'>
