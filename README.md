@@ -1,5 +1,5 @@
 <div align='center'>
-<img src="./.github/proffy.png" width='250'>
+<img src="./.github-assets/proffy.png" width='250'>
 
 ---
 
@@ -17,7 +17,7 @@
 Next Level Week é uma semana intensa com um propósito de desenvolver uma aplicação do mundo real fornecida pela RocketSeat, nessa edição foi desenvolvido o Proffy.
 
 <div align='center'>
-<img src="./.github/logo.svg" width='250'>
+<img src="./.github-assets/logo.svg" width='250'>
 
 ---
 
@@ -72,10 +72,10 @@ O Proffy é uma plataforma de estudos on-line, com intuito de conectar alunos e 
 <div align='center'>
   
 ###  📸 Capa do Proffy
-<img src="./.github/capa.png" width='500'>
+<img src="./.github-assets/capa.png" width='500'>
 
 
 ###  📸 Print da lista de professores
-<img src="./.github/print2.png" width='500'>
+<img src="./.github-assets/print2.png" width='500'>
 
 </div>
