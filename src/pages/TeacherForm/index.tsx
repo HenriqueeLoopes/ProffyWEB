@@ -10,6 +10,15 @@ import warningIcon from "../../assets/images/icons/warning.svg";
 import "./styles.css";
 
 function TeacherForm() {
+  const schduleItems = [
+    { week_day: 0, from: "8:00 AM", to: "4:00 PM"},
+    { week_day: 2, from: "10:00 AM", to: "6:00 PM"}
+  ];
+
+  function addNewScheduleItem() {
+    console.log('clicou');
+  }
+
   return (
     <div id="page-teacher-form" className="container">
       <PageHeader
@@ -48,26 +57,33 @@ function TeacherForm() {
 
         <fieldset>
           <legend>
-            Horarios Disponiveis<button type="button">+ novo horario</button>
+            Horarios Disponiveis
+            <button type="button" onClick={addNewScheduleItem}>
+              + novo horario
+            </button>
           </legend>
 
-          <div className="schedule-item">
-            <Select
-              name="week_day"
-              label="Dia da semana"
-              options={[
-                { value: "0", label: "Domingo" },
-                { value: "1", label: "Segunda" },
-                { value: "2", label: "Terca" },
-                { value: "3", label: "Quarta" },
-                { value: "4", label: "Quinta" },
-                { value: "5", label: "Sexta" },
-                { value: "6", label: "Sabado" },
-              ]}
-            />
-            <Input name="from" label="Das" type="time" />
-            <Input name="to" label="Ate" type="time" />
-          </div>
+          {schduleItems.map(schduleItem => {
+            return (
+              <div key={schduleItem.week_day} className="schedule-item">
+              <Select
+                name="week_day"
+                label="Dia da semana"
+                options={[
+                  { value: "0", label: "Domingo" },
+                  { value: "1", label: "Segunda" },
+                  { value: "2", label: "Terca" },
+                  { value: "3", label: "Quarta" },
+                  { value: "4", label: "Quinta" },
+                  { value: "5", label: "Sexta" },
+                  { value: "6", label: "Sabado" },
+                ]}
+              />
+              <Input name="from" label="Das" type="time" />
+              <Input name="to" label="Ate" type="time" />
+            </div>
+            );
+          })}
         </fieldset>
 
         <footer>
