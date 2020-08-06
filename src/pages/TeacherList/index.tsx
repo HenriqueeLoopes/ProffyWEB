@@ -9,6 +9,7 @@ import Select from "../../components/Select";
 import api from "../../services/api";
 
 function TeacherList() {
+  const [ teachers, setTeachers ] = useState([]);
   const [subject, setSubject] = useState("");
   const [week_day, setWeek_Day] = useState("");
   const [time, setTime] = useState("");
@@ -22,7 +23,7 @@ function TeacherList() {
         time
       }
     });
-    console.log(response);
+    setTeachers(response.data);
   }
 
   return (
@@ -79,13 +80,11 @@ function TeacherList() {
       </PageHeader>
 
       <main>
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map((teacher, index) => {
+          return (
+            <TeacherItem key={index} teacher={teacher} />
+          );
+        })}
       </main>
     </div>
   );
