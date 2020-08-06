@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from "react";
+import React, { useState, useEffect, FormEvent } from "react";
 
 import PageHeader from "../../components/PageHeader";
 import TeacherItem from "../../components/TeacherItem";
@@ -9,19 +9,30 @@ import Select from "../../components/Select";
 import api from "../../services/api";
 
 function TeacherList() {
-  const [ teachers, setTeachers ] = useState([]);
+  const [teachers, setTeachers] = useState([]);
   const [subject, setSubject] = useState("");
   const [week_day, setWeek_Day] = useState("");
   const [time, setTime] = useState("");
 
+  useEffect(() => {
+    setTimeout(() => {
+      async function fetchData() {
+        const response = await api.get("/all-classes");
+        console.log(response);
+        setTeachers(response.data);
+      }
+      fetchData();
+    }, 50);
+  }, []);
+
   async function searchTeachers(e: FormEvent) {
     e.preventDefault();
-    const response = await api.get('/classes', {
+    const response = await api.get("/classes", {
       params: {
         subject,
         week_day,
-        time
-      }
+        time,
+      },
     });
     setTeachers(response.data);
   }
@@ -81,9 +92,7 @@ function TeacherList() {
 
       <main>
         {teachers.map((teacher, index) => {
-          return (
-            <TeacherItem key={index} teacher={teacher} />
-          );
+          return <TeacherItem key={index} teacher={teacher} />;
         })}
       </main>
     </div>
